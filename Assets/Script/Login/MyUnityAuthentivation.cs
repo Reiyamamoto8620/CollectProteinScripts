@@ -19,18 +19,39 @@ public class MyUnityAuthentivation : MonoBehaviour
     /// </summary>
     async void Awake()
     {
+        bool isNetworkConnect = false;
         //初期化
         await UnityServices.InitializeAsync();
         Debug.Log(UnityServices.State);
-
-        //サインインを実行
-        await SignInAnonymouslyAsync();
-        //データをロード
-        await LoadData();
+        //ネットワーク接続がある場合実行
+        if (NetworkState.CheckNetworkState())
+        {
+            //サインインを実行
+            await SignInAnonymouslyAsync();
+            //データをロード
+            await LoadData();
+            //ネットワークの接続判定をtrueに
+            isNetworkConnect = true;
+        }
+        //ネットワーク接続がない場合実行
+        else
+        {
+            //ネットワークの接続判定をfalseに
+            isNetworkConnect = false;
+        }
         //ゲームオブジェクトが削除されないようにする
         DontDestroyOnLoad(this.gameObject);
 
-        SceneManager.LoadScene("Login");
+        //ネットワーク接続がある場合ログイン画面に移行
+        if (isNetworkConnect)
+        {
+            SceneManager.LoadScene("Login");
+        }
+        //ネットワーク接続がない場合タイトル画面に移行
+        else
+        {
+            SceneManager.LoadScene("Title");
+        }
     }
 
     /// <summary>

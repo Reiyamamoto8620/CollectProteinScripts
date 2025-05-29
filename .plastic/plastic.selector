@@ -1,4 +1,0 @@
-repository "CollectProtein@NemesisCh@cloud"
-  path "/"
-    br "/main"
-    co "/main"

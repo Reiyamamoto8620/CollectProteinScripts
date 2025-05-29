@@ -9,12 +9,17 @@ public class PostSaveData : MonoBehaviour
 {
     [SerializeField]
     SaveDataScriptableObject m_SaveData;        //セーブデータ
+
     /// <summary>
     /// これを持ったオブジェクトが破棄されたときに起動
     /// </summary>
     void OnDestroy()
     {
-        SaveUserData(); 
+        //ネットワークに接続がある場合実行
+        if (NetworkState.CheckNetworkState())
+        {
+            SaveUserData();
+        }
     }
 
     /// <summary>

@@ -9,6 +9,8 @@ public class LoginScene : MonoBehaviour
     bool m_isInputName;     //名前の入力判定
     
     bool m_isNext;          //シーン移行判定
+    
+    
 
     /// <summary>
     /// UIのセレクト番号

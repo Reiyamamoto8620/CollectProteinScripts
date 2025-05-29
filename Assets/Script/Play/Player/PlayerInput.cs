@@ -7,9 +7,9 @@ using UnityEngine.InputSystem;
 public class PlayerInput : MonoBehaviour
 {
 
-    [SerializeField] int m_RunTimeMaxCount = 30;      //Run状態の最大継続時間
+    [SerializeField] int m_RunTimeMaxCount = 30;            //Run状態の最大継続時間
 
-    GetInput m_Input;                              //プレイヤーの入力
+    GetInput m_Input;                                       //プレイヤーの入力
 
     Vector2 m_stickInputValue;                              //スティック入力の値
     bool m_isRun;                                           //Run判定
@@ -85,7 +85,6 @@ public class PlayerInput : MonoBehaviour
     /// <summary>
     ///スティック入力を取得
     /// </summary>
-    /// <returns></returns>
     public Vector2 GetStickInputValue()
     {
         return m_stickInputValue;
@@ -94,7 +93,6 @@ public class PlayerInput : MonoBehaviour
     /// <summary>
     /// ダッシュ入力を取得
     /// </summary>
-    /// <returns></returns>
     public bool GetIsRun()
     {
         return m_isRun;
@@ -103,7 +101,6 @@ public class PlayerInput : MonoBehaviour
     /// <summary>
     /// 連打速度を取得
     /// </summary>
-    /// <returns></returns>
     public int GetRunBarrageSpeed()
     {
         return m_runBarrageSpeed;

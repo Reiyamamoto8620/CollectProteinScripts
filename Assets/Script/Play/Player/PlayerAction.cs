@@ -11,7 +11,7 @@ public class PlayerAction : MonoBehaviour
     [SerializeField] float m_MoveSpeed;           //Playerの歩く速度
     [SerializeField] float m_RunSpeed;            //Playerの走る速度
 
-    Rigidbody m_rigidbody;                      //RigitBody
+    Rigidbody m_rigidbody;                        //RigitBody
 
     /// <summary>
     /// 起動時初期化

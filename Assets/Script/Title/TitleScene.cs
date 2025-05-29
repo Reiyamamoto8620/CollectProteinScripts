@@ -58,8 +58,8 @@ public class TitleScene : MonoBehaviour
                 {
                     SceneManager.LoadScene("TitleToPlay");
                 }
-                //セレクト番号がGachaの時実行
-                if (_selectValue == (int)UISelectNumber.Gacha)
+                //セレクト番号がGachaで、ネットワーク接続がある時実行
+                if (_selectValue == (int)UISelectNumber.Gacha && NetworkState.CheckNetworkState())
                 {
                     m_isGacha = true;
                     m_isNext = true;
